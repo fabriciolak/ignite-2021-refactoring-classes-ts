@@ -16,7 +16,7 @@ interface Foods {
 interface ModalAddFoodProps {
   handleAddFood: (data: Foods) => void
   isOpen: boolean
-  setIsOpen: () => boolean
+  setIsOpen: () => void
 }
 
 function ModalAddFood({ handleAddFood, isOpen, setIsOpen }: ModalAddFoodProps) {
@@ -26,7 +26,7 @@ function ModalAddFood({ handleAddFood, isOpen, setIsOpen }: ModalAddFoodProps) {
   };
 
   return (
-    <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+    <Modal isOpen={isOpen} setIsOpen={() => setIsOpen}>
       <Form onSubmit={handleSubmit}>
         <h1>Novo Prato</h1>
         <Input name="image" placeholder="Cole o link aqui" />
